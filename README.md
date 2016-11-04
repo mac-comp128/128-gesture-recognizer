@@ -7,7 +7,7 @@ For this homework assignment, you will practice using data structures to impleme
 This homework will have three milestones:
 
 * Part 1 **(Due Friday, November 11th)**: For this milestone, you should answer the questions below and bring your answers to hand in on paper in class.
-* Part 2 **(Due Wednesday, November 16th)**: For this milestone you should commit and push the code to draw the user interface and allow a user to draw a gesture. The gesture does not need to be recognized at this point.
+* Part 2 **(Due Monday, November 14th)**: For this milestone you should commit and push the code to draw the user interface and allow a user to draw a gesture. The gesture does not need to be recognized at this point.
 * Part 3 **(Due Tuesday, November 22nd)**: For this milestone you should commit and push the completed assignment that allows users to add templates and recognize gestures. The test files should pass.
 
 ### Part 1 Questions
