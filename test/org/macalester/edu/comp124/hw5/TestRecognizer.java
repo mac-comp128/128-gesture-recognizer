@@ -163,7 +163,7 @@ public class TestRecognizer {
 //        //TODO: set score to the recognition score.
 //        double score = 0;
 //
-//        assertEquals(0.888684, score, 0.001); // testGesture should match against templateGesture with a score of 0.92
+//        assertEquals(0.888684, score, 0.001); // testGesture should match against templateGesture with a score of 0.888
 //
 //    }
 }
