@@ -19,7 +19,9 @@ For part 1, you should answer the following questions:
 1. What data structure will you use to store the points in the gesture? Justify your answer.
 2. In order to draw the gesture on the CanvasWindow, you will need to use several of the methods defined in the MouseListener and MouseMotionListener interfaces. List each of the methods you will use, and briefly describe what actions you will need to take in order to draw the gesture on the CanvasWindow. 
 3. **In your own words**, describe each step of the recognition algorithm. For each step, explain why the actions performed on the data are needed.
-4. What is still confusing about the algorithm?
+4. Please review each of the provided classes that we have given you. For each one, describe their purpose. When might you want to use the functions provided?
+5. We have given you a partial class decomposition. Can you think of any more classes you might need to store the data involved in this program?
+6. What is still confusing about the algorithm?
 
 Please submit your answers in Moodle for the this homework assignment. Make sure that they are thoughtfully written. Please edit for grammar, clarity, and coherence.
 
@@ -115,7 +117,7 @@ Adding last point: (19.0,0.0)
 #### Scale to Square
 
 1. Calculate bounding size (width and height) of the gesture. The width is the maximum x value for any point in the gesture minus the minimum x value. The height is the maximum y value minus the minimum y value.
-2. Scale each point in the gesture by (size / width, size / height), so that the resulting bounding box will be of size^2 size. We use size=250.
+2. Scale each point in the gesture by (size / width, size / height), so that the resulting bounding box will be a square with width and height equal to size. we use size=250, but you should make this a named constant so its easy to change later.
 3. Visually confirm in the Visualizer that the green scaled arrow is distorted into a square shape.
 
 #### Translate to point
