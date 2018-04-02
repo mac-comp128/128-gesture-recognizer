@@ -8,12 +8,11 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.awt.geom.Point2D;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Handles input/put for saving/loading gestures. Used for testing.
@@ -29,7 +28,7 @@ public class IOManager {
      * @param fileName Name of a file in the res folder (e.g. arrow.xml)
      * @return Queue of points contained in the gesture
      */
-    public List<Point2D> loadGesture(String fileName){
+    public List<Point> loadGesture(String fileName){
         try {
             String path = getClass().getClassLoader().getResource(fileName).getPath();
             path = path.replace("%20", " ");
@@ -43,12 +42,12 @@ public class IOManager {
 
             NodeList tags = document.getElementsByTagName("Point");
 
-            List<Point2D> gesture = new ArrayList<>();
+            List<Point> gesture = new ArrayList<>();
 
             for(int i = 0; i < tags.getLength(); i++){
                 Node node = tags.item(i);
                 NamedNodeMap attributes = node.getAttributes();
-                Point2D.Double point = new Point2D.Double(Double.parseDouble(attributes.getNamedItem("X").getNodeValue()), Double.parseDouble(attributes.getNamedItem("Y").getNodeValue()));
+                Point point = new Point(Double.parseDouble(attributes.getNamedItem("X").getNodeValue()), Double.parseDouble(attributes.getNamedItem("Y").getNodeValue()));
                 gesture.add(point);
             }
             return gesture;
@@ -66,7 +65,7 @@ public class IOManager {
      * @param gestureName The name of the gesture
      * @param fileName The filename for the gesture. (e.g. arrow.xml)
      */
-    public void saveGesture(List<Point2D> gesture, String gestureName, String fileName){
+    public void saveGesture(List<Point> gesture, String gestureName, String fileName){
         try {
             // Find the res folder and append the filename to the path.
             Path path = Paths.get(getClass().getClassLoader().getResource("res-Readme.txt").toURI());
@@ -86,7 +85,7 @@ public class IOManager {
             gestureTag.setAttribute("NumPts", Integer.toString(gesture.size()));
             document.appendChild(gestureTag);
 
-            for(Point2D point : gesture){
+            for(Point point : gesture){
                 Element pointTag = document.createElement("Point");
                 pointTag.setAttribute("X", Double.toString(point.getX()));
                 pointTag.setAttribute("Y", Double.toString(point.getY()));

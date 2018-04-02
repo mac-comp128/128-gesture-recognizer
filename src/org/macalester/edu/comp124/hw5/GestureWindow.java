@@ -6,7 +6,6 @@ import comp124graphics.Line;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.Point2D;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -21,7 +20,7 @@ public class GestureWindow extends CanvasWindow implements ActionListener, KeyLi
     private JButton addTemplateButton;
     private JTextField templateNameField;
     private JLabel matchLabel;
-    private List<Point2D> path;
+    private List<Point> path;
 
 
     public GestureWindow(){
@@ -90,7 +89,7 @@ public class GestureWindow extends CanvasWindow implements ActionListener, KeyLi
             if (name.isEmpty()){
                 name = "gesture";
             }
-            List<Point2D> points = ioManager.loadGesture(name+".xml");
+            List<Point> points = ioManager.loadGesture(name+".xml");
             if (points != null){
                 recognizer.addTemplate(name, points);
                 System.out.println("Loaded "+name);

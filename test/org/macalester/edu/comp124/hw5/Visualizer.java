@@ -1,10 +1,8 @@
 package org.macalester.edu.comp124.hw5;
 
 import comp124graphics.*;
-import comp124graphics.Rectangle;
 
-import java.awt.*;
-import java.awt.geom.Point2D;
+import java.awt.Color;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,7 +10,7 @@ import java.util.List;
 public class Visualizer extends CanvasWindow {
 
     private Recognizer recognizer;
-    private List<Point2D> originalPoints;
+    private List<Point> originalPoints;
 
     public Visualizer(){
         super("$1 Recognizer Visualizer", 600, 600);
@@ -29,18 +27,17 @@ public class Visualizer extends CanvasWindow {
     private void visualizeSteps(){
         drawPath(originalPoints, Color.BLACK);
 
-//
-//        int n = 25;
-//        List<Point2D> resampled = recognizer.resample(originalPoints, n);
+        int n = 25;
+//        List<Point> resampled = recognizer.resample(originalPoints, n);
 //        drawPath(resampled, Color.BLUE);
 //
-//        List<Point2D> rotated = recognizer.rotateBy(resampled, Math.PI);
+//        List<Point> rotated = recognizer.rotateBy(resampled, -recognizer.indicativeAngle(resampled));
 //        drawPath(rotated, Color.RED);
 //
-//        List<Point2D> scaled = recognizer.scaleTo(rotated, 100);
+//        List<Point> scaled = recognizer.scaleTo(rotated, 100);
 //        drawPath(scaled, Color.GREEN);
 //
-//        List<Point2D> translated = recognizer.translateTo(scaled, new Point2D.Double(0.0,0.0));
+//        List<Point> translated = recognizer.translateTo(scaled, new Point(0.0,0.0));
 //        drawPath(translated, Color.MAGENTA);
     }
 
@@ -80,11 +77,11 @@ public class Visualizer extends CanvasWindow {
 
 
     //For debugging
-    private void drawPath(List<Point2D> path, Color color){
-        Iterator<Point2D> it = path.iterator();
+    private void drawPath(List<Point> path, Color color){
+        Iterator<Point> it = path.iterator();
         GraphicsGroup group = new GraphicsGroup(getWidth()/2.0, getHeight()/2.0);
         while(it.hasNext()){
-            Point2D p = it.next();
+            Point p = it.next();
             Ellipse e = new Ellipse(p.getX(), p.getY(), 5, 5);
             e.setFilled(true);
             e.setStroked(false);
