@@ -117,7 +117,7 @@ Adding last point: (19.0,0.0)
 #### Scale to Square
 
 1. Calculate bounding size (width and height) of the gesture. The width is the maximum x value for any point in the gesture minus the minimum x value. The height is the maximum y value minus the minimum y value.
-2. Scale each point in the gesture by (size / width, size / height), so that the resulting bounding box will be a square with width and height equal to size. we use size=250, but you should make this a named constant so its easy to change later.
+2. Scale each point in the gesture by (size / width, size / height), so that the resulting bounding box will be a square with width and height equal to size. We use size=250, but you should make this a named constant so its easy to change later.
 3. Visually confirm in the Visualizer that the green scaled arrow is distorted into a square shape.
 
 #### Translate to point
