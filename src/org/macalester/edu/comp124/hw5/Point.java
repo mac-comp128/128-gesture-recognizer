@@ -27,7 +27,7 @@ public final class Point {
     }
 
     /**
-     * @return the angle in radians formed between the x-axis and the vector from the origin to this point.
+     * @return the angle in radians formed between the x-axis and the vector from the origin (0,0) to this point.
      */
     public double angle() {
         return Math.atan2(y, x);
@@ -43,7 +43,7 @@ public final class Point {
     }
 
     /**
-     * Treats p like a displacement vector and adds it to the current point
+     * Returns a new point made by adding this point's x and y coordinates to point p's x and y coordinates.
      * @param p
      * @return
      */
@@ -52,7 +52,7 @@ public final class Point {
     }
 
     /**
-     * Treats p like a displacement vector and subtracts it from the current point
+     * Returns a new point made by subtracting this point's x and y coordinates to point p's x and y coordinates.
      * @param p
      * @return
      */
@@ -60,9 +60,23 @@ public final class Point {
         return new Point(x - p.x, y - p.y);
     }
 
+    /**
+     * scales a point up (or down) by multiplying the x and y coordinates by the s value
+     *
+     * @param s
+     * @return
+     */
     public Point scale(double s) {
         return scale(s, s);
     }
+
+    /**
+     * scales a point up (or down) by multiplying the x and y coordinates by their respective s values
+     *
+     * @param sx scaling factor for the x variable
+     * @param sy scaling factor for the y variable
+     * @return
+     */
 
     public Point scale(double sx, double sy) {
         return new Point(x * sx, y * sy);
@@ -93,7 +107,7 @@ public final class Point {
     }
 
     /**
-     * Returns the point rotated around the origin by angle
+     * Returns the point rotated around the origin (0,0) by angle
      * @param angle in radians
      * @return
      */
@@ -104,7 +118,7 @@ public final class Point {
     }
 
     /**
-     * Returns the point rotated around the center by angle
+     * Returns the point rotated around the provided center point by angle
      * @param angle in radians
      * @param center
      * @return
@@ -116,10 +130,20 @@ public final class Point {
     }
 
     /**
-     * Linearly interpolates by alpha between the two points.
+     * Creates a point on the line between input point p0 and input point p1.
+     * The alpha parameter is used to describe where the returned point should be along
+     * the line between point p0 and point p1, with small (close to 0) values of alpha
+     * meaning the returned point should be close to point p0 and large (close to 1)
+     * values of alpha meaning the returned point should be close to p1.
+     *
+     * (Mathematically this is called linearly interpolating between p0 and p1, hence
+     * the method name). See https://en.wikipedia.org/wiki/Linear_interpolation for
+     * more information and a mediocre.
+     *
      * @param p0
      * @param p1
-     * @param alpha
+     * @param alpha a number between 0 and 1 indicating where the returned point should
+     *              lie along the line between point p0 and point p1.
      * @return
      */
     public static Point interpolate(Point p0, Point p1, double alpha) {
