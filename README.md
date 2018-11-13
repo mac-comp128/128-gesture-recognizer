@@ -6,9 +6,9 @@ For this homework assignment, you will practice using data structures to impleme
 ### Due Dates
 This homework will have two milestones:
 
-* Part 1 **(Due Friday, April 6th)**: For this milestone, you should answer the questions below for the moodle assignment that corresponds with this homework.
-* Part 2 **(Due Wednesday, April 11th)**: For this milestone you should commit and push the code to allow a user to draw a gesture. The gesture does not need to be recognized at this point.
-* Part 3 **(Due Wednesday, April 18th)**: For this milestone you should commit and push the completed assignment that allows users to add templates and recognize gestures. The test files should pass.
+* Part 1: For this milestone, you should answer the questions below for the moodle assignment that corresponds with this homework.
+* Part 2: For this milestone you should commit and push the code to allow a user to draw a gesture. The gesture does not need to be recognized at this point.
+* Part 3: For this milestone you should commit and push the completed assignment that allows users to add templates and recognize gestures. The test files should pass.
 
 ### Part 1 Questions
 
@@ -20,7 +20,7 @@ For part 1, you should answer the following questions:
 2. In order to draw the gesture on the CanvasWindow, you will need to use several of the methods defined in the MouseListener and MouseMotionListener interfaces. List each of the methods you will use, and briefly describe what actions you will need to take in order to draw the gesture on the CanvasWindow. 
 3. **In your own words**, describe each step of the recognition algorithm. For each step, explain why the actions performed on the data are needed.
 4. Please review each of the provided classes that we have given you. For each one, describe their purpose. When might you want to use the functions provided?
-5. We have given you a partial class decomposition. Can you think of any more classes you might need to store the data involved in this program?
+5. We have given you a partial class decomposition. Can you think of any more classes you might need to store the data involved in this program? In particular think about what the return type of an attempted gesture recognition should be.
 6. What is still confusing about the algorithm?
 
 Please submit your answers in Moodle for the this homework assignment. Make sure that they are thoughtfully written. Please edit for grammar, clarity, and coherence.
@@ -50,6 +50,7 @@ Hook your recognizer up to the rest of your user interface. When the user releas
 
 * When drawing the gesture, each time you move the mouse you need to store the 2D point representing its position at that point in time. We have provided a Point class that you can use. Hint: look carefully at the methods defined in the Point class. They will be useful when implementing the recognition algorithm.
 * The Point class' rotate method assumes that the angle is in radians, not degrees!
+* To make the visualizer show both the responding template and the related score you probably need a new class representing one "Match" or "Result"
 
 You will also find some pseudo-code for some of the steps below. Think carefully about the pseudo-code and cross reference it with the algorithm description in the paper. Don't just blindly copy it. As always, you should make sure you use good method decomposition.
 
@@ -60,7 +61,7 @@ To resample the path into only n points (we use n=64):
 2. Divide this path length by (n–1), where n is the number of resampled points we want to achieve, to get the distance between each of the resampled points. We will call this the resampleInterval.
 3. Add the first point to the list of resampled points.
 4. Iterate over the original points in the path adding up the distances between them.
-    1. When the accumulated distance exceeds the resampleInterval, calculate where the resampled point should lie by linearly interpolating between the current iteration point and the previous. The alpha value for the interpolation should be (resampleInterval - accumulatedDistance)/segmentDistance, where accumulated distance is the total distance from the previous resampled point to the current iteration point and segmentDistance is the distance between the current iteration point and the previous iteration point.
+    1. When the accumulated distance exceeds the resampleInterval, calculate where the resampled point should lie by linearly interpolating (see the Point.interpolate method) between the current iteration point and the previous. The alpha value for the interpolation should be (resampleInterval - accumulatedDistance)/segmentDistance, where accumulated distance is the total distance from the previous resampled point to the current iteration point and segmentDistance is the distance between the current iteration point and the previous iteration point.
     2. Add the resampled point to the list of resampled points and insert it at the current iteration position in the original path. (We want the next segment distance to be from it to the current iteration point).
     3. Reset the accumulatedDistance to zero and continue iterating.
 5. It is possible due to rounding errors that the last segment distance will be slightly less than the resampleInterval, leading to only n-1 resampled points. If that is the case, add the last original point to the resampled points list.

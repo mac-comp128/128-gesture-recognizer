@@ -5,7 +5,6 @@ import java.util.Objects;
 /**
  * An immutable 2D point and associated helper methods.
  */
-
 public final class Point {
     public static final Point
         MIN = new Point(Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY),
@@ -27,7 +26,7 @@ public final class Point {
     }
 
     /**
-     * @return the angle in radians formed between the x-axis and the vector from the origin (0,0) to this point.
+     * @return the angle (in radians) formed between the x-axis and the vector from the origin (0,0) to this point.
      */
     public double angle() {
         return Math.atan2(y, x);
@@ -52,7 +51,9 @@ public final class Point {
     }
 
     /**
-     * Returns a new point made by subtracting this point's x and y coordinates to point p's x and y coordinates.
+     * Returns a new point made by subtracting point p's x and y coordinates from this point's x and y coordinates.
+     * This method can be used to shift/recent a point with point p being shifted to the origin (0,0)
+
      * @param p
      * @return
      */
@@ -138,7 +139,7 @@ public final class Point {
      *
      * (Mathematically this is called linearly interpolating between p0 and p1, hence
      * the method name). See https://en.wikipedia.org/wiki/Linear_interpolation for
-     * more information and a mediocre.
+     * more information and a nice visualization of the basic idea.
      *
      * @param p0
      * @param p1

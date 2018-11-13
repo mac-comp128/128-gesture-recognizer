@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class Recognizer {
 
+    //TODO: add any necissary instance variables here.
+
     /**
      * Constructs a recognizer object
      */
@@ -78,7 +80,6 @@ public class Recognizer {
         //TODO: implement the method and return the correct distance
         return 0;
     }
-
 
 
 
