@@ -6,7 +6,7 @@ For this homework assignment, you will practice using data structures to impleme
 ### Due Dates
 This homework will have two milestones:
 
-* Part 1: For this milestone, you should answer the questions below for the moodle assignment that corresponds with this homework.
+* Part 1: For this milestone, you should answer the Part 1 Questions below. Submit your answers on the Moodle assignment that corresponds with this homework.
 * Part 2: For this milestone you should commit and push the code to allow a user to draw a gesture. The gesture does not need to be recognized at this point.
 * Part 3: For this milestone you should commit and push the completed assignment that allows users to add templates and recognize gestures. The test files should pass.
 
@@ -49,8 +49,9 @@ Hook your recognizer up to the rest of your user interface. When the user releas
 ### Helpful Hints
 
 * When drawing the gesture, each time you move the mouse you need to store the 2D point representing its position at that point in time. We have provided a Point class that you can use. Hint: look carefully at the methods defined in the Point class. They will be useful when implementing the recognition algorithm.
-* The Point class' rotate method assumes that the angle is in radians, not degrees!
-* To make the visualizer show both the responding template and the related score you probably need a new class representing one "Match" or "Result"
+* The Point class’s rotate method assumes that the angle is in radians, not degrees!
+* A template consists of a name and some points. Making a new class to group these things together will help you write cleaner code.
+* To make the visualizer show both a matching template _and_ its match score, you will probably need a new class, a “Match” or “Result,” that groups those two things together.
 
 You will also find some pseudo-code for some of the steps below. Think carefully about the pseudo-code and cross reference it with the algorithm description in the paper. Don't just blindly copy it. As always, you should make sure you use good method decomposition.
 
