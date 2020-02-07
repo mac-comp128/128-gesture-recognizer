@@ -1,19 +1,19 @@
-package org.macalester.edu.comp124.hw5;
+package comp128.gestureRecognizer;
 
-import comp124graphics.CanvasWindow;
-import comp124graphics.Ellipse;
-import comp124graphics.GraphicsGroup;
+import comp127graphics.CanvasWindow;
+import comp127graphics.Ellipse;
+import comp127graphics.GraphicsGroup;
+import comp127graphics.Point;
 
-import java.awt.*;
-import java.util.*;
 import java.util.List;
+import java.util.Deque;
 
 /**
  * Recognizer to recognize 2D gestures. Uses the $1 gesture recognition algorithm.
  */
 public class Recognizer {
 
-    //TODO: add any necissary instance variables here.
+    //TODO: add any necessary instance variables here.
 
     /**
      * Constructs a recognizer object
@@ -27,7 +27,7 @@ public class Recognizer {
      * @param name of the template
      * @param points in the template gesture's path
      */
-    public void addTemplate(String name, List<Point> points){
+    public void addTemplate(String name, Deque<Point> points){
         // TODO: process the points and add them as a template. Use Decomposition!
     }
 
@@ -40,7 +40,7 @@ public class Recognizer {
      * @param templatePoints
      * @return best distance
      */
-    private double distanceAtBestAngle(List<Point> points, List<Point> templatePoints){
+    private double distanceAtBestAngle(Deque<Point> points, Deque<Point> templatePoints){
         double thetaA = -Math.toRadians(45);
         double thetaB = Math.toRadians(45);
         final double deltaTheta = Math.toRadians(2);
@@ -68,14 +68,14 @@ public class Recognizer {
         return Math.min(f1, f2);
     }
 
-    private double distanceAtAngle(List<Point> points, List<Point> templatePoints, double theta){
+    private double distanceAtAngle(Deque<Point> points, Deque<Point> templatePoints, double theta){
         //TODO: Uncomment after rotate method is implemented
-        List<Point> rotatedPoints = null;
+        Deque<Point> rotatedPoints = null;
         // rotatedPoints = rotateBy(points, theta);
         return pathDistance(rotatedPoints, templatePoints);
     }
 
-    private double pathDistance(List<Point> a, List<Point> b){
+    private double pathDistance(Deque<Point> a, Deque<Point> b){
 
         //TODO: implement the method and return the correct distance
         return 0;

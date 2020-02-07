@@ -1,4 +1,6 @@
-package org.macalester.edu.comp124.hw5;
+package comp128.gestureRecognizer;
+
+import comp127graphics.Point;
 
 import org.w3c.dom.*;
 
@@ -11,7 +13,9 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -28,7 +32,7 @@ public class IOManager {
      * @param fileName Name of a file in the res folder (e.g. arrow.xml)
      * @return Queue of points contained in the gesture
      */
-    public List<Point> loadGesture(String fileName){
+    public Deque<Point> loadGesture(String fileName){
         try {
             String path = getClass().getClassLoader().getResource(fileName).getPath();
             path = path.replace("%20", " ");
@@ -42,7 +46,7 @@ public class IOManager {
 
             NodeList tags = document.getElementsByTagName("Point");
 
-            List<Point> gesture = new ArrayList<>();
+            Deque<Point> gesture = new ArrayDeque<>();
 
             for(int i = 0; i < tags.getLength(); i++){
                 Node node = tags.item(i);
@@ -65,7 +69,7 @@ public class IOManager {
      * @param gestureName The name of the gesture
      * @param fileName The filename for the gesture. (e.g. arrow.xml)
      */
-    public void saveGesture(List<Point> gesture, String gestureName, String fileName){
+    public void saveGesture(Deque<Point> gesture, String gestureName, String fileName){
         try {
             // Find the res folder and append the filename to the path.
             Path path = Paths.get(getClass().getClassLoader().getResource("res-Readme.txt").toURI());

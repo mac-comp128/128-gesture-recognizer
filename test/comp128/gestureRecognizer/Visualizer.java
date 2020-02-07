@@ -1,8 +1,9 @@
-package org.macalester.edu.comp124.hw5;
+package comp128.gestureRecognizer;
 
-import comp124graphics.*;
+import comp127graphics.*;
 
 import java.awt.Color;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
 public class Visualizer extends CanvasWindow {
 
     private Recognizer recognizer;
-    private List<Point> originalPoints;
+    private Deque<Point> originalPoints;
 
     public Visualizer(){
         super("$1 Recognizer Visualizer", 600, 600);
@@ -28,16 +29,16 @@ public class Visualizer extends CanvasWindow {
         drawPath(originalPoints, Color.BLACK);
 
         int n = 25;
-//        List<Point> resampled = recognizer.resample(originalPoints, n);
+//        Deque<Point> resampled = recognizer.resample(originalPoints, n);
 //        drawPath(resampled, Color.BLUE);
 //
-//        List<Point> rotated = recognizer.rotateBy(resampled, -recognizer.indicativeAngle(resampled));
+//        Deque<Point> rotated = recognizer.rotateBy(resampled, -recognizer.indicativeAngle(resampled));
 //        drawPath(rotated, Color.RED);
 //
-//        List<Point> scaled = recognizer.scaleTo(rotated, 100);
+//        Deque<Point> scaled = recognizer.scaleTo(rotated, 100);
 //        drawPath(scaled, Color.GREEN);
 //
-//        List<Point> translated = recognizer.translateTo(scaled, new Point(0.0,0.0));
+//        Deque<Point> translated = recognizer.translateTo(scaled, new Point(0.0,0.0));
 //        drawPath(translated, Color.MAGENTA);
     }
 
@@ -58,7 +59,7 @@ public class Visualizer extends CanvasWindow {
         yAxis.setStrokeColor(Color.LIGHT_GRAY);
         add(yAxis);
         GraphicsText text = new GraphicsText("(0,0)", getWidth()/2-20, getHeight()/2-20);
-        text.setStrokeColor(Color.LIGHT_GRAY);
+        text.setFillColor(Color.LIGHT_GRAY);
         add(text);
     }
 
@@ -69,7 +70,7 @@ public class Visualizer extends CanvasWindow {
         rect.setFillColor(color);
         row.add(rect);
         GraphicsText text = new GraphicsText(label, 30, 0);
-        int height = text.getFont().getSize();
+        double height = text.getHeight();
         text.setY(height);
         row.add(text);
         return row;
@@ -77,7 +78,7 @@ public class Visualizer extends CanvasWindow {
 
 
     //For debugging
-    private void drawPath(List<Point> path, Color color){
+    private void drawPath(Deque<Point> path, Color color){
         Iterator<Point> it = path.iterator();
         GraphicsGroup group = new GraphicsGroup(getWidth()/2.0, getHeight()/2.0);
         while(it.hasNext()){
