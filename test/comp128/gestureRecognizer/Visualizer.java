@@ -1,11 +1,10 @@
 package comp128.gestureRecognizer;
 
-import comp127graphics.*;
+import edu.macalester.graphics.*;
 
 import java.awt.Color;
 import java.util.Deque;
 import java.util.Iterator;
-import java.util.List;
 
 
 public class Visualizer extends CanvasWindow {

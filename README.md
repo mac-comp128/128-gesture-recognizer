@@ -4,7 +4,7 @@ Comp 128 HW1: Gesture Recognizer
 For this homework assignment, you will practice using data structures to implement an algorithm for gesture recognition of drawn 2D gestures.
 
 ### Due Dates
-This homework will have two milestones:
+This homework will have three milestones:
 
 * Part 1: For this milestone, you should answer the Part 1 Questions below. Submit your answers on the Moodle assignment that corresponds with this homework.
 * Part 2: For this milestone you should commit and push the code to allow a user to draw a gesture. The gesture does not need to be recognized at this point.
@@ -31,8 +31,8 @@ For part 2, your code should allow the user to draw in the user interface shown 
 
 ![Gesture Recognizer Screenshot](./res/screenshot.png)
 
-The user should be able to click and drag with the mouse to draw a gesture (e.g. the arrow drawn in the upper portion of the screen). This will require implementing several mouse event handler methods. Hint: Look back at the Painter lab from comp127  and Listing 6.26 in the textbook for similar examples.
-The gesture can be drawn in a CanvasWindow using Line objects from the comp127graphics package between successive mouse points.
+The user should be able to click to clear any current drawings on the canvas and then drag with the mouse to draw a gesture (e.g. the arrow drawn in the upper portion of the screen). This will require implementing several mouse event handler methods. Hint: Look back at the Painter lab from comp127  and Listing 6.26 in the textbook for similar examples.
+The gesture can be drawn in a CanvasWindow using Line objects from the [kilt-graphics package](https://mac-comp127.github.io/kilt-graphics/), formerly known as comp127graphics, between successive mouse points.
 
 ### Part 3
 

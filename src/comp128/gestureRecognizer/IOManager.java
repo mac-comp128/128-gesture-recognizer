@@ -1,6 +1,6 @@
 package comp128.gestureRecognizer;
 
-import comp127graphics.Point;
+import edu.macalester.graphics.Point;
 
 import org.w3c.dom.*;
 
@@ -14,9 +14,8 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
-import java.util.List;
+
 
 /**
  * Handles input/put for saving/loading gestures. Used for testing.

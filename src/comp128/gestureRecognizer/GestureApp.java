@@ -1,14 +1,12 @@
 package comp128.gestureRecognizer;
 
-import comp127graphics.*;
-import comp127graphics.Point;
-import comp127graphics.ui.Button;
-import comp127graphics.ui.TextField;
+import edu.macalester.graphics.*;
+import edu.macalester.graphics.Point;
+import edu.macalester.graphics.ui.Button;
+import edu.macalester.graphics.ui.TextField;
 
 import java.util.ArrayDeque;
-import java.util.List;
 import java.util.Deque;
-import java.util.ArrayList;
 import java.util.function.Consumer;
 
 /**
@@ -65,6 +63,15 @@ public class GestureApp {
         //TODO: Add mouse listeners to allow the user to draw and add the points to the path variable.
 
 
+    }
+
+    /**
+     * Clears the canvas, but preserves all the UI objects
+     */
+    private void removeAllNonUIGraphicsObjects() {
+        canvas.removeAll();
+        canvas.add(matchLabel);
+        canvas.add(uiGroup);
     }
 
     /**

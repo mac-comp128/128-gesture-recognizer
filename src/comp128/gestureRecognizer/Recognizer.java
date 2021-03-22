@@ -1,11 +1,10 @@
 package comp128.gestureRecognizer;
 
-import comp127graphics.CanvasWindow;
-import comp127graphics.Ellipse;
-import comp127graphics.GraphicsGroup;
-import comp127graphics.Point;
+import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.Ellipse;
+import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.Point;
 
-import java.util.List;
 import java.util.Deque;
 
 /**
