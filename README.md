@@ -27,7 +27,7 @@ Please submit your answers in Moodle for the this homework assignment. Make sure
 
 ### Part 2
 
-For part 2, your code should allow the user to draw in the user interface shown in the image below. We have already given you the code that creates the user interface elements in `GestureWindow`.
+For part 2, your code should allow the user to draw in the user interface shown in the image below. We have already given you the code that creates the user interface elements in `GestureApp`.
 
 ![Gesture Recognizer Screenshot](./res/screenshot.png)
 
@@ -44,7 +44,7 @@ The `Visualizer` class allows graphical debugging. This class draws each step as
 
 Make the addTemplate method work. This should create a gesture template for the path parameter. Think carefully about which data structure you will use in your Recognizer class to store the gesture templates. It is okay to use ones discussed in comp127, even if we haven't gotten to them yet this semester. Practice class/Method decomposition!
 
-Hook your recognizer up to the rest of your user interface. When the user presses the mouse, the previous drawing should be cleared from the canvas. On releasing the mouse, the gesture should be recognized, and the name of the closest match and the score should be displayed in a `matchlabel` label on the screen. See the GestureWindow screenshot above for an example.
+Hook your recognizer up to the rest of your user interface. When the user presses the mouse, the previous drawing should be cleared from the canvas. On releasing the mouse, the gesture should be recognized, and the name of the closest match and the score should be displayed in a `matchlabel` label on the screen. See the GestureApp screenshot above for an example.
 
 ### Helpful Hints
 
