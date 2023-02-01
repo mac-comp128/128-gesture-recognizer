@@ -21,7 +21,9 @@ For part 1, you should answer the following questions:
 3. **In your own words**, describe each step of the recognition algorithm. For each step, explain why the actions performed on the data are needed.
 4. Please review each of the provided classes that we have given you. For each one, describe their purpose. When might you want to use the functions provided?
 5. We have given you a partial class decomposition. Can you think of any more classes you might need to store the data involved in this program? In particular think about what the return type of an attempted gesture recognition should be.
-6. What is still confusing about the algorithm?
+6. Assume you are given a gesture with 10 points spaced equidistantly along the x-axis (e.g. (0, 0), (1,0), (2, 0) ... (9,0)). Assume you want to resample the gesture to only contain 5 points. What would the resample interval be for this scenario?
+7. Now, run the resample algorithm by hand on the 10 points from the previous question. At each stage of the algorithm show your work by writing down which points are being considered, what the segment distance is between them, and what the accumulated distance is (similar to the example under algorithm hints below!). Make sure it is clear what resampled points are added to the deque.
+8. What is still confusing about the algorithm?
 
 Please submit your answers in Moodle for the this homework assignment. Make sure that they are thoughtfully written. Please edit for grammar, clarity, and coherence.
 
