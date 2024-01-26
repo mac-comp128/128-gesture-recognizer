@@ -19,11 +19,12 @@ For part 1, you should answer the following questions:
 1. In the starter code, we have declared a double-ended queue (Deque) data structure to hold the list of drawn points. Describe why this is an appropriate choice.
 2. In order to draw the gesture on the CanvasWindow, you will need to implement several mouse event handlers. List each of the methods you will use, and briefly describe what actions you will need to take in order to draw the gesture on the CanvasWindow. 
 3. **In your own words**, describe each step of the recognition algorithm. For each step, explain why the actions performed on the data are needed.
-4. Please review each of the provided classes that we have given you. For each one, describe their purpose. When might you want to use the functions provided?
-5. We have given you a partial class decomposition. Can you think of any more classes you might need to store the data involved in this program? In particular think about what the return type of an attempted gesture recognition should be.
-6. Assume you are given a gesture with 10 points spaced equidistantly along the x-axis (e.g. (0, 0), (1,0), (2, 0) ... (9,0)). Assume you want to resample the gesture to only contain 5 points. What would the resample interval be for this scenario?
-7. Now, run the resample algorithm by hand on the 10 points from the previous question. At each stage of the algorithm show your work by writing down which points are being considered, what the segment distance is between them, and what the accumulated distance is (similar to the example under algorithm hints below!). Make sure it is clear what resampled points are added to the deque.
-8. What is still confusing about the algorithm?
+4. Look closely at the test cases in TestRecognizer. Make sure you understand exactly how each one works. The test cases call methods that you will need to write in the Recognizer class. For each call to a method in the Recognizer class, write down the full method signature including the return type, name, and parameters. 
+5. Please review each of the provided classes that we have given you. For each one, describe their purpose. When might you want to use the functions provided?
+6. We have given you a partial class decomposition. Can you think of any more classes you might need to store the data involved in this program? In particular think about what the return type of an attempted gesture recognition should be.
+7. Assume you are given a gesture with 10 points spaced equidistantly along the x-axis (e.g. (0, 0), (1,0), (2, 0) ... (9,0)). Assume you want to resample the gesture to only contain 5 points. What would the resample interval be for this scenario?
+8. Now, run the resample algorithm by hand on the 10 points from the previous question. At each stage of the algorithm show your work by writing down which points are being considered, what the segment distance is between them, and what the accumulated distance is (similar to the example under algorithm hints below!). Make sure it is clear what resampled points are added to the deque.
+9. What is still confusing about the algorithm?
 
 Please submit your answers in Moodle for the this homework assignment. Make sure that they are thoughtfully written. Please edit for grammar, clarity, and coherence.
 
