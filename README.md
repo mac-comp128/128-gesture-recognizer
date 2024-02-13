@@ -148,7 +148,7 @@ In this assignment, the primary learning goals are to gain practice using data s
 
 ### Submission
 
-Part 1 will be submitted on moodle. It will be graded based on effort shown in answering the four questions.
+Part 1 will be submitted on moodle. It will be graded based on effort shown in answering the questions.
  
 The code for parts 2 and 3 should be committed and pushed to github.
 
