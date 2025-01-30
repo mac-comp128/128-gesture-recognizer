@@ -72,7 +72,7 @@ To resample the path into only n points (we use n=64):
 5. It is possible due to rounding errors that the last segment distance will be slightly less than the resampleInterval, leading to only n-1 resampled points. If that is the case, add the last original point to the resampled points list.
 
 
-To help debug, you can add print statements to your resample method or set break points to step through your code. The resample test should provide the following steps when resampling from 20 points along the x-axis to 10 points:
+To help debug, you can add print statements to your resample method or [set break points to step through your code](https://docs.google.com/document/d/1e4-utwnfAaut9XjBnOsqYGwlhgX9bPS4uzI7UpUM1wc/edit?usp=sharing). The resample test should provide the following steps when resampling from 20 points along the x-axis to 10 points:
 
 ![Gesture Resampling](./res/GestureResampling.png)
 
