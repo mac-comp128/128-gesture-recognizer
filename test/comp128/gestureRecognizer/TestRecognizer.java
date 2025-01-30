@@ -133,28 +133,29 @@ public class TestRecognizer {
 //             }
 //         }
 
-//    /**
-//     * Tests scaling by creating a 100 by 100 size box and scaling it to 200 by 200
-//     */
-//    @Test
-//    public void testScaleTo(){
-//        Deque<Point> box = new ArrayDeque<>(4);
-//        box.add(new Point(0,0));
-//        box.add(new Point(100, 0));
-//        box.add(new Point(100,100));
-//        box.add(new Point(0, 100));
-//        Deque<Point> scaled = recognizer.scaleTo(box, 200);
+//     /**
+    //  * Tests scaling by creating a 100 by 400 size box and scaling it to 200 by 200
+    //  */
+    // @Test
+    // public void testScaleTo(){
+    //     Deque<Point> box = new ArrayDeque<>(4);
+    //     box.add(new Point(100,100));
+    //     box.add(new Point(200, 100));
+    //     box.add(new Point(200,500));
+    //     box.add(new Point(100, 500));
+    //     Deque<Point> scaled = recognizer.scaleTo(box, 200);
 
 
-//        assertEquals(4, scaled.size());
-//        Iterator<Point> itScaled = scaled.iterator();
-//        Iterator<Point> itBox = box.iterator();
-//        while (itScaled.hasNext()){
-//            Point scaledPoint = itScaled.next();
-//            Point boxPoint = itBox.next();
-//            assertEquals(boxPoint.scale(2), scaledPoint);
-//        }
-//    }
+    //     assertEquals(4, scaled.size());
+    //     Iterator<Point> itScaled = scaled.iterator();
+    //     Iterator<Point> itBox = box.iterator();
+    //     while (itScaled.hasNext()){
+    //         Point scaledPoint = itScaled.next();
+    //         Point boxPoint = itBox.next();
+    //         assertEquals(boxPoint.getX()*2, scaledPoint.getX()); // The x bounds of the original box are 100 so scaling to 200 should be equivalent to multiplying by 2.
+    //         assertEquals(boxPoint.getY()*0.5, scaledPoint.getY()); // The y bounds of the original box are 400, so scaling to 200 should be equivalent to multiplying by 0.5 (Note, scaling is relative to the origin so the coordinates end up as 50 and 250!)
+    //     }
+    // }
 
 //    /**
 //     * Tests that translating the points moves the centroid to the indicated point.
