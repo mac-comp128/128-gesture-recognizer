@@ -30,7 +30,7 @@ public class TestRecognizer {
 
     // /**
     //  * Tests that points are resampled correctly
-    //  * Edited by Lucy Manalang on 2/22/2024
+    //  * Edited by Lucy Manalang on 3/8/2024
     //  */
     // @Test
     // public void testResample(){
@@ -56,6 +56,8 @@ public class TestRecognizer {
 
     //     Iterator<Point> resampleIterator = resampledCircle.iterator();
     //     Iterator<Point> circleIterator = resampled.iterator();
+    
+    //     assertEquals(64, resampled.size());
     //     while (circleIterator.hasNext()){
     //         Point point1 = circleIterator.next();
     //         Point point2 = resampleIterator.next();
